@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Form Demo - the-internet clone</title>
+</head>
+<body>
+    <h1>Simple Form Demo</h1>
+    
+    <h2>Single Input Field</h2>
+    <input type="text" id="single-input" placeholder="Enter your message">
+    <button id="show-btn">Show Message</button>
+    <p id="display-message"></p>
+    
+    <h2>Two Input Fields</h2>
+    <input type="number" id="input-a" placeholder="Enter first number">
+    <input type="number" id="input-b" placeholder="Enter second number">
+    <button id="sum-btn">Get Total</button>
+    <p id="sum-result"></p>
+
+    <script>
+        document.getElementById('show-btn').onclick = function() {
+            var msg = document.getElementById('single-input').value;
+            document.getElementById('display-message').innerHTML = msg;
+        };
+        
+        document.getElementById('sum-btn').onclick = function() {
+            var a = parseInt(document.getElementById('input-a').value) || 0;
+            var b = parseInt(document.getElementById('input-b').value) || 0;
+            document.getElementById('sum-result').innerHTML = a + b;
+        };
+    </script>
+</body>
+</html>
