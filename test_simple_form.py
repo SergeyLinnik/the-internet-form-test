@@ -1,8 +1,6 @@
 """
-Тест для Simple Form Demo
-Сайт: https://the-internet.herokuapp.com/ (локальная копия формы)
-Задача: ввести значения в Single Input Field и Two Input Fields,
-нажать кнопки и сравнить результаты.
+Тест для Simple Form Demo (локальная версия)
+Задача: ввести значения в поля, нажать кнопки, сравнить результат.
 """
 
 import os
@@ -71,23 +69,21 @@ def main() -> None:
     """Основная функция: запуск браузера и тестов"""
     driver = setup_driver()
     
-    try:
-        # Открываем локальную HTML-форму
-        html_path = os.path.abspath("form.html")
-        driver.get(f"file://{html_path}")
-        print("Страница загружена")
-        
-        # Запуск тестов
-        test_single_input(driver)
-        test_two_inputs(driver)
-        
-        print("\n" + "=" * 40)
-        print("ВСЕ ТЕСТЫ ПРОЙДЕНЫ УСПЕШНО")
-        print("=" * 40)
-        
-    finally:
-        driver.quit()
-        print("\nБраузер закрыт")
+    # Открываем локальную HTML-форму
+    html_path = os.path.abspath("form.html")
+    driver.get(f"file://{html_path}")
+    print("Страница загружена")
+    
+    # Запуск тестов
+    test_single_input(driver)
+    test_two_inputs(driver)
+    
+    print("\n" + "=" * 40)
+    print("ВСЕ ТЕСТЫ ПРОЙДЕНЫ УСПЕШНО")
+    print("=" * 40)
+    
+    driver.quit()
+    print("\nБраузер закрыт")
 
 
 if __name__ == "__main__":
